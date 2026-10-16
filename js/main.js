@@ -24,26 +24,12 @@
     el.innerHTML = el.textContent.trim().split(/\s+/).map((w) => `<span class="w">${w}</span>`).join(' ');
   });
 
-  // ----------------------------------------------------------------- intro
-  const intro = $('#intro');
-  const word = $('#intro-word');
-  word.innerHTML = [...word.textContent].map((c, i) => `<span style="animation-delay:${0.1 + i * 0.05}s">${c}</span>`).join('');
-  const ready = () => { root.classList.add('is-ready'); };
-  if (calm || location.hash) {
-    intro.remove(); ready();
-  } else {
-    const n = $('#intro-n'), t0 = performance.now(), D = 1500;
-    document.body.style.overflow = 'hidden';
-    (function tick(t) {
-      const k = clamp((t - t0) / D);
-      n.textContent = String(Math.round((1 - Math.pow(1 - k, 3)) * 100)).padStart(3, '0');
-      if (k < 1) return requestAnimationFrame(tick);
-      intro.classList.add('is-out');
-      document.body.style.overflow = '';
-      setTimeout(ready, 250);
-      setTimeout(() => intro.remove(), 1200);
-    })(t0);
-  }
+  // ------------------------------------------------------------ ouverture
+  const say = $('#hero-say');
+  say.innerHTML = say.textContent.trim().split(/\s+/).map((w) => `<span class="w">${w}</span>`).join(' ');
+  const sayW = $$('.w', say);
+  requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add('is-ready')));
+  setTimeout(() => root.classList.add('is-settled'), calm ? 0 : 4200);
 
   // ------------------------------------------------------------ navigation
   const nav = $('#nav'), burger = $('#burger'), menu = $('#menu');
@@ -55,7 +41,7 @@
     if (open) menu.hidden = false; else setTimeout(() => { if (!nav.classList.contains('is-open')) menu.hidden = true; }, 800);
   });
   menu.addEventListener('click', (e) => { if (e.target.closest('a')) burger.click(); });
-  const darks = [$('#voitures'), $('#foot')];
+  const darks = [$('#accueil'), $('#voitures'), $('#foot')];
   const links = $$('.nav__links a');
   const ids = links.map((a) => $(a.getAttribute('href')));
 
@@ -171,13 +157,6 @@
 
   const hero = $('#accueil'), heroPin = $('.hero__pin');
 
-  const heroTop = $('.hero__top');
-  function sizeHero() { heroPin.style.setProperty('--mt', `${heroTop.offsetTop + heroTop.offsetHeight + Math.min(60, innerHeight * 0.06)}px`); }
-  const resize = sizeHero;
-  resize();
-  addEventListener('resize', resize);
-  addEventListener('load', resize);
-  document.fonts && document.fonts.ready.then(resize);
 
   // ------------------------------------------------------- boucle d'images
   const par = $$('[data-par]');
@@ -199,7 +178,10 @@
     if (!calm) {
       // hero
       const hr = hero.getBoundingClientRect();
-      heroPin.style.setProperty('--p', clamp(-hr.top / (hr.height - vh)).toFixed(4));
+      const hp = clamp(-hr.top / (hr.height - vh));
+      heroPin.style.setProperty('--p', hp.toFixed(4));
+      const sn = Math.round(clamp((hp - 0.3) / 0.55) * sayW.length);
+      sayW.forEach((w, i) => w.classList.toggle('on', i < sn));
 
       // parallaxe
       par.forEach((im) => { const r = im.parentNode.getBoundingClientRect(); if (r.bottom > 0 && r.top < vh) im.style.setProperty('--py', `${((r.top + r.height / 2) / vh - 0.5) * -60}px`); });
