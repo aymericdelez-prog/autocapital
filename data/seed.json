@@ -38,7 +38,7 @@
     {
       "id": "volkswagen-golf-2-0-tsi-r-line-dsg-4motion-2022",
       "brand": "Volkswagen",
-      "model": "Golf 2.0 TSI R-Line DSG 4Motion",
+      "model": "Golf R-Line 4Motion",
       "year": 2022,
       "km": 71000,
       "ps": 191,
@@ -69,7 +69,7 @@
     {
       "id": "fiat-500c-electrique-red-2022",
       "brand": "Fiat",
-      "model": "500C électrique (RED)",
+      "model": "500C (RED)",
       "year": 2022,
       "km": 17500,
       "ps": 119,
@@ -99,7 +99,7 @@
     {
       "id": "volkswagen-golf-1-5-etsi-r-line-2021",
       "brand": "Volkswagen",
-      "model": "Golf 1.5 eTSI R-Line",
+      "model": "Golf eTSI R-Line",
       "year": 2021,
       "km": 72500,
       "ps": 150,
@@ -165,7 +165,7 @@
     {
       "id": "ford-mustang-shelby-gt-500-svt-2012",
       "brand": "Ford",
-      "model": "Mustang Shelby GT 500 SVT",
+      "model": "Shelby GT500",
       "year": 2012,
       "km": 14600,
       "ps": 557,
@@ -197,7 +197,7 @@
     {
       "id": "audi-q3-sportback-45-tfsi-e-s-line-2023",
       "brand": "Audi",
-      "model": "Q3 Sportback 45 TFSI e S line",
+      "model": "Q3 Sportback S line",
       "year": 2023,
       "km": 33900,
       "ps": 150,
@@ -229,7 +229,7 @@
     {
       "id": "audi-rs6-avant-4-0-tfsi-v8-quattro-2020",
       "brand": "Audi",
-      "model": "RS6 Avant 4.0 TFSI V8 quattro",
+      "model": "RS6 Avant",
       "year": 2020,
       "km": 132900,
       "ps": 600,
@@ -324,7 +324,7 @@
     {
       "id": "ferrari-california-t-3-9-v8-2016",
       "brand": "Ferrari",
-      "model": "California T 3.9 V8",
+      "model": "California T",
       "year": 2016,
       "km": 47000,
       "ps": 560,
@@ -358,7 +358,7 @@
     {
       "id": "porsche-taycan-4-cross-turismo-2023",
       "brand": "Porsche",
-      "model": "Taycan 4 Cross Turismo",
+      "model": "Taycan Cross Turismo",
       "year": 2023,
       "km": 49900,
       "ps": 476,
@@ -390,7 +390,7 @@
     {
       "id": "aston-martin-v8-vantage-4-3-n400-2008",
       "brand": "Aston Martin",
-      "model": "V8 Vantage 4.3 N400",
+      "model": "V8 Vantage N400",
       "year": 2008,
       "km": 33200,
       "ps": 405,
@@ -421,7 +421,7 @@
     {
       "id": "mercedes-benz-sl-320-special-edition-1998",
       "brand": "Mercedes-Benz",
-      "model": "SL 320 Special Edition",
+      "model": "SL 320",
       "year": 1998,
       "km": 59050,
       "ps": 231,
