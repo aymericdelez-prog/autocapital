@@ -11,7 +11,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,300..900&family=Inter:wght@400;500;600&display=swap">
-  <link rel="preload" as="image" href="/assets/showroom-hero.webp">
+  <link rel="preload" as="image" href="/assets/showroom-hero.webp" media="(min-width: 681px)">
+  <link rel="preload" as="image" href="/assets/showroom-hero-mobile.webp" media="(max-width: 680px)">
   <link rel="preload" as="image" href="/assets/logo-autocapital.svg">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -52,7 +53,10 @@
     <section class="hero" id="accueil">
       <div class="hero__pin">
         <div class="hero__media">
-          <img src="/assets/showroom-hero.webp" alt="Le showroom Autocapital à Hauterive, de nuit" fetchpriority="high">
+          <picture>
+            <source media="(max-width: 680px)" srcset="/assets/showroom-hero-mobile.webp">
+            <img src="/assets/showroom-hero.webp" alt="Le showroom Autocapital à Hauterive, de nuit" fetchpriority="high">
+          </picture>
         </div>
         <div class="hero__shade"></div>
         <i class="hero__beam" aria-hidden="true"></i>
