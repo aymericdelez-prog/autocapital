@@ -46,7 +46,7 @@
 .row__act { display: flex; gap: 8px; }
 .btn { height: 40px; padding: 0 16px; border-radius: var(--r-pill); font-size: 14px; font-weight: 500; background: var(--mist); color: var(--ink); transition: background 0.3s, color 0.3s; white-space: nowrap; }
 .btn:hover { background: var(--smoke); }
-.btn--sold:hover { background: #e3ece7; color: var(--rosso); }
+.btn--sold:hover { background: #e6e7ee; color: var(--rosso); }
 .list__empty { padding: 60px 20px; border-radius: 20px; background: #fff; text-align: center; color: var(--muted); }
 
 /* formulaire */
