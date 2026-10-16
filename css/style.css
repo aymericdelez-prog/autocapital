@@ -267,7 +267,7 @@ svg { width: 1em; height: 1em; }
 a.line:hover { padding-left: 14px; }
 a.line:hover em { background: var(--rosso); border-color: var(--rosso); color: #fff; transform: rotate(-45deg); }
 .map { margin-top: 30px; border-radius: var(--r-card); overflow: hidden; aspect-ratio: 16 / 9; background: var(--mist); }
-.map iframe { width: 100%; height: 100%; border: 0; filter: grayscale(1) contrast(1.05); }
+.map iframe { width: 100%; height: 100%; border: 0; }
 .form { padding: clamp(28px, 4vw, 48px); border-radius: var(--r-card); background: #fff; align-self: start; }
 .form h3 { font-family: var(--f-display); font-stretch: 112%; font-weight: 800; font-size: clamp(26px, 2.6vw, 36px); letter-spacing: -0.03em; margin: 0 0 22px; line-height: 1; }
 .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
