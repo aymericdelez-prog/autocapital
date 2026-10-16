@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Autocapital · Voitures sportives et classiques, Hauterive</title>
+  <meta name="description" content="Autocapital, votre spécialiste pour toutes voitures, sportives et classiques. Achat, vente, dépôt-vente, recherche, financement et restauration. Rouges-Terres 25, 2068 Hauterive.">
+  <meta name="theme-color" content="#e4e3e0">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,600..900&family=Inter:wght@400;500;600&display=swap">
+  <link rel="preload" as="image" href="/assets/ferrari-458-speciale-a.jpg">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-out" viewBox="0 0 16 16"><path d="M6 3.5h6.5V10M12.5 3.5 4 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.5h2.6l1.4 4-2 1.3a12 12 0 0 0 6.6 6.6l1.3-2 4 1.4v2.6a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro__word" id="intro-word">Autocapital</div>
+    <div class="intro__bar"><span>Hauterive · Neuchâtel</span><span id="intro-n">000</span></div>
+    <i class="intro__line"></i>
+  </div>
+  <div class="cur" id="cur" aria-hidden="true"><span>Voir</span></div>
+
+  <header class="nav" id="nav">
+    <div class="nav__in">
+      <a class="nav__brand" href="#accueil" aria-label="Autocapital, accueil"><span class="nav__s" aria-hidden="true">A</span>Autocapital</a>
+      <nav class="nav__links" aria-label="Navigation principale">
+        <a href="#voitures">Voitures à vendre</a>
+        <a href="#philosophie">Philosophie</a>
+        <a href="#services">Services</a>
+        <a href="#garage">Garage</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav__end">
+        <a class="nav__tel" href="tel:+41329501010"><svg><use href="#i-phone"/></svg>032 950 10 10</a>
+        <a class="pill pill--sm" href="#contact" data-mag>Prendre rendez-vous</a>
+        <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
+      </div>
+    </div>
+    <div class="menu" id="menu" hidden>
+      <a href="#voitures">Voitures</a>
+      <a href="#philosophie">Philosophie</a>
+      <a href="#services">Services</a>
+      <a href="#garage">Garage</a>
+      <a href="#contact">Contact</a>
+      <a class="menu__tel" href="tel:+41329501010">032 950 10 10</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ACCUEIL : le mot géant, puis la Ferrari qui s'ouvre plein écran -->
+    <section class="hero" id="accueil">
+      <div class="hero__pin">
+        <div class="hero__top">
+          <h1 class="display hero__word" aria-label="Autocapital"><span data-split>Autocapital</span><sup>®</sup></h1>
+          <div class="hero__aside">
+            <p class="hero__claim">Sportives<br><span>&amp; classiques.</span></p>
+            <a class="pill" href="#voitures" data-mag>Voir les voitures <svg><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+        <div class="hero__scroll"><i></i>Défiler</div>
+        <div class="hero__media">
+          <img src="/assets/ferrari-458-speciale-a.jpg" alt="Ferrari 458 Speciale A gris mat dans le showroom Autocapital" fetchpriority="high">
+        </div>
+        <div class="hero__cap">
+          <p>Votre spécialiste<br>pour toutes voitures.</p>
+          <a class="pill pill--ghost" href="#philosophie" data-mag>Notre philosophie <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <div class="marq" aria-hidden="true">
+      <div class="marq__track" id="marq">
+        <span>Ferrari</span><span>Porsche</span><span>Lamborghini</span><span>Mercedes-AMG</span><span>Rolls-Royce</span><span>Bentley</span><span>Aston Martin</span><span>McLaren</span>
+      </div>
+    </div>
+
+    <!-- VOITURES À VENDRE (remplies depuis le back-office) -->
+    <section class="sec sec--dark" id="voitures">
+      <div class="wrap">
+        <div class="stock__head">
+          <div>
+            <p class="eyebrow rv">En vente au showroom</p>
+            <h2 class="h2 lines" data-lines>Voitures<br>à vendre.</h2>
+            <p class="stock__count rv" id="stock-count" aria-live="polite"></p>
+          </div>
+          <div class="filters rv" id="filters" role="group" aria-label="Filtrer">
+            <button type="button" data-f="all" aria-pressed="true">Toutes</button>
+            <button type="button" data-f="sport" aria-pressed="false">Sportives</button>
+            <button type="button" data-f="classic" aria-pressed="false">Classiques</button>
+            <button type="button" data-f="prestige" aria-pressed="false">Prestige</button>
+          </div>
+        </div>
+        <div class="grid" id="grid" aria-busy="true"></div>
+        <div class="stock__more rv">
+          <span>Vous cherchez un modèle précis&nbsp;?</span>
+          <a class="tlink" href="#contact" style="color:#fff">Nous le trouvons pour vous <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHILOSOPHIE -->
+    <section class="sec" id="philosophie">
+      <div class="wrap philo__grid">
+        <div class="philo__head">
+          <p class="eyebrow rv">Notre philosophie</p>
+          <h2 class="h2 lines" data-lines>Exigeants,<br>comme nos<br>voitures.</h2>
+          <div class="philo__num" aria-hidden="true"><b id="philo-n">01</b></div>
+        </div>
+        <ol class="philo__list" id="philo">
+          <li data-words>Être exigeant avec nous-mêmes comme nous le sommes avec les voitures que nous proposons à la vente.</li>
+          <li data-words>Vous offrir votre voiture au juste prix et dans le délai le plus court.</li>
+          <li data-words>Assurer un service à haute valeur ajoutée avec une qualité contrôlée.</li>
+          <li data-words>Avoir la souplesse et la disponibilité que sont en droit d’attendre nos clients.</li>
+          <li data-words>Décharger notre client de toutes contraintes, afin que sa voiture reste son plaisir.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="sec sec--white" id="services">
+      <div class="wrap">
+        <div class="serv__head">
+          <div>
+            <p class="eyebrow rv">Nos services</p>
+            <h2 class="h2 lines" data-lines>Tout, autour<br>de votre voiture.</h2>
+          </div>
+          <p class="lead rv">Soumettez-nous vos besoins ou vos envies. Notre équipe met tout en œuvre pour vous satisfaire dans le délai le plus raisonnable.</p>
+        </div>
+        <ul class="serv__list" id="serv">
+          <li class="serv__row rv" data-img="0"><span class="serv__n">01</span><span class="serv__t">Achat &amp; vente</span><span class="serv__d">Des voitures choisies une à une, contrôlées et prêtes à rouler.</span></li>
+          <li class="serv__row rv" data-img="1"><span class="serv__n">02</span><span class="serv__t">Dépôt-vente</span><span class="serv__d">Votre voiture exposée dans notre showroom, nous gérons tout.</span></li>
+          <li class="serv__row rv" data-img="2"><span class="serv__n">03</span><span class="serv__t">Recherche</span><span class="serv__d">Nous trouvons votre future voiture, même la plus rare.</span></li>
+          <li class="serv__row rv" data-img="3"><span class="serv__n">04</span><span class="serv__t">Financement</span><span class="serv__d">Une solution sur mesure, adaptée à votre situation.</span></li>
+          <li class="serv__row rv" data-img="4"><span class="serv__n">05</span><span class="serv__t">Restauration</span><span class="serv__d">Avec l’aide des plus grands spécialistes européens.</span></li>
+        </ul>
+        <div class="serv__float" id="serv-float" aria-hidden="true">
+          <img src="/assets/showroom.jpg" alt=""><img src="/assets/showroom-nuit.jpg" alt=""><img src="/assets/rolls-royce.jpg" alt=""><img src="/assets/ferrari-458-speciale-a.jpg" alt=""><img src="/assets/ferrari-testarossa.jpg" alt="">
+        </div>
+
+        <div class="clay rv">
+          <div class="clay__txt">
+            <div>
+              <h2 class="h2">Vendre sans contrainte.</h2>
+              <p>Confiez-nous votre voiture en dépôt-vente. Estimation, préparation, photos, visites et essais : nous vous libérons de tout, au juste prix.</p>
+            </div>
+            <a class="pill" href="/?sujet=depot#contact" data-mag>Faire estimer ma voiture <svg><use href="#i-arrow"/></svg></a>
+          </div>
+          <div class="clay__img"><img src="/assets/showroom.jpg" alt="Mercedes-AMG GT S et Porsche 911 GT3 RS dans le showroom" loading="lazy" data-par></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GARAGE : galerie horizontale épinglée -->
+    <section class="garage" id="garage">
+      <div class="garage__pin">
+        <div class="garage__track" id="g-track">
+          <div class="garage__intro">
+            <p class="eyebrow">Notre garage</p>
+            <h2 class="h2">Un showroom<br>à Hauterive.</h2>
+            <p class="lead">Notre devise : vous libérer de toutes contraintes avec votre voiture. Nous vous offrons un service personnalisé et unique.</p>
+          </div>
+          <figure class="garage__ph"><img src="/assets/showroom-nuit.jpg" alt="Façade vitrée du showroom Autocapital la nuit" loading="lazy"><figcaption>Le showroom</figcaption></figure>
+          <figure class="garage__ph"><img src="/assets/ferrari-458-speciale-a.jpg" alt="Ferrari 458 Speciale A" loading="lazy"><figcaption>Ferrari 458 Speciale A</figcaption></figure>
+          <figure class="garage__ph"><img src="/assets/showroom.jpg" alt="Voitures de sport alignées dans le showroom" loading="lazy"><figcaption>Sportives</figcaption></figure>
+          <figure class="garage__ph"><img src="/assets/rolls-royce.jpg" alt="Spirit of Ecstasy sur une Rolls-Royce" loading="lazy"><figcaption>Prestige</figcaption></figure>
+          <figure class="garage__ph"><img src="/assets/ferrari-testarossa.jpg" alt="Ferrari Testarossa rouge" loading="lazy"><figcaption>Classiques</figcaption></figure>
+        </div>
+        <div class="garage__bar"><i id="g-bar"></i></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="sec" id="contact">
+      <div class="wrap contact__grid">
+        <div>
+          <p class="eyebrow rv">Contact</p>
+          <h2 class="headline lines" data-lines>Passez<br>nous voir.</h2>
+          <p class="lead rv">Visites et essais sur rendez-vous. Appelez-nous ou écrivez-nous, nous vous répondons rapidement.</p>
+          <div class="contact__lines">
+            <a class="line rv" href="tel:+41329501010"><small>Téléphone</small><b>+41 32 950 10 10</b><em><svg><use href="#i-arrow"/></svg></em></a>
+            <a class="line rv" href="mailto:info@autocapital.ch"><small>E-mail</small><b>info@autocapital.ch</b><em><svg><use href="#i-arrow"/></svg></em></a>
+            <a class="line rv" href="https://www.google.com/maps/dir/?api=1&amp;destination=Autocapital%2C+Rouges-Terres+25%2C+2068+Hauterive" target="_blank" rel="noopener"><small>Adresse</small><b>Rouges-Terres 25, 2068 Hauterive</b><em><svg><use href="#i-out"/></svg></em></a>
+          </div>
+          <div class="map rv"><iframe title="Plan d’accès Autocapital" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Rouges-Terres%2025%2C%202068%20Hauterive&amp;z=15&amp;output=embed"></iframe></div>
+        </div>
+
+        <form class="form rv" id="form" novalidate>
+          <h3>Votre demande.</h3>
+          <div class="seg" role="radiogroup" aria-label="Sujet">
+            <label><input type="radio" name="sujet" value="Achat" checked><span>Achat</span></label>
+            <label><input type="radio" name="sujet" value="Dépôt-vente"><span>Dépôt-vente</span></label>
+            <label><input type="radio" name="sujet" value="Recherche"><span>Recherche</span></label>
+            <label><input type="radio" name="sujet" value="Autre"><span>Autre</span></label>
+          </div>
+          <div class="fields">
+            <label class="field"><input name="nom" required placeholder=" " autocomplete="name"><span>Nom et prénom</span></label>
+            <label class="field"><input name="tel" placeholder=" " inputmode="tel" autocomplete="tel"><span>Téléphone</span></label>
+            <label class="field field--full"><input name="email" type="email" required placeholder=" " autocomplete="email"><span>E-mail</span></label>
+            <label class="field field--area"><textarea name="message" required placeholder=" " id="msg"></textarea><span>Votre message</span></label>
+          </div>
+          <div class="form__end">
+            <button class="pill" type="submit" data-mag>Envoyer <svg><use href="#i-arrow"/></svg></button>
+            <p class="form__msg" id="form-msg" role="status"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot" id="foot">
+    <div class="wrap">
+      <div class="foot__cta">
+        <h2 class="headline">Votre prochaine<br>voiture vous attend.</h2>
+        <a class="pill pill--light" href="#voitures" data-mag>Voir les voitures <svg><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="foot__top">
+        <div class="foot__brand">
+          <span class="foot__s" aria-hidden="true">A</span>
+          <p>Autocapital<br>Guercioni &amp; Mottier<br>Rouges-Terres 25<br>2068 Hauterive NE</p>
+        </div>
+        <nav class="foot__nav" aria-label="Pied de page">
+          <a href="#voitures">Voitures à vendre</a>
+          <a href="#philosophie">Philosophie</a>
+          <a href="#services">Services</a>
+          <a href="#garage">Garage</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="foot__contact">
+          <a href="tel:+41329501010">Tél. +41 32 950 10 10</a>
+          <span style="color:rgba(255,255,255,.45)">Fax +41 32 950 10 11</span>
+          <a href="mailto:info@autocapital.ch">info@autocapital.ch</a>
+        </div>
+      </div>
+      <div class="foot__word" id="foot-word" aria-hidden="true"><span data-split>Autocapital</span></div>
+      <div class="foot__legal">
+        <p>© 2026 Autocapital, Guercioni &amp; Mottier.</p>
+        <p>Design et site © New Architect, tous droits réservés. Reproduction interdite.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

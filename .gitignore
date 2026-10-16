@@ -1,4 +1,9 @@
 .vercel
 .env*
+.data
 node_modules
-*.log
+.DS_Store
+Thumbs.db
+
+.env*
+*.local.txt

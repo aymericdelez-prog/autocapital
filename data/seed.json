@@ -1,0 +1,8 @@
+{
+  "cars": [
+    { "id": "ferrari-458-speciale-a", "brand": "Ferrari", "model": "458 Speciale A", "year": 2015, "km": 4900, "ps": 605, "gear": "Robotisée", "fuel": "Essence", "color": "Gris mat", "price": 589000, "cat": "sport", "badge": "Exemple", "description": "Annonce d’exemple, à remplacer depuis le back-office.", "url": "", "photos": ["/assets/ferrari-458-speciale-a.jpg"], "createdAt": "2026-10-16T08:00:00.000Z" },
+    { "id": "mercedes-amg-gt-s", "brand": "Mercedes-AMG", "model": "GT S", "year": 2016, "km": 12000, "ps": 510, "gear": "Robotisée", "fuel": "Essence", "color": "Gris magno", "price": 119000, "cat": "sport", "badge": "Exemple", "description": "Annonce d’exemple, à remplacer depuis le back-office.", "url": "", "photos": ["/assets/showroom.jpg"], "createdAt": "2026-10-16T07:59:00.000Z" },
+    { "id": "rolls-royce-ghost", "brand": "Rolls-Royce", "model": "Ghost", "year": 2014, "km": 31000, "ps": 570, "gear": "Automatique", "fuel": "Essence", "color": "Argent", "price": 159000, "cat": "prestige", "badge": "Exemple", "description": "Annonce d’exemple, à remplacer depuis le back-office.", "url": "", "photos": ["/assets/rolls-royce.jpg"], "createdAt": "2026-10-16T07:58:00.000Z" },
+    { "id": "ferrari-testarossa", "brand": "Ferrari", "model": "Testarossa", "year": 1988, "km": 38000, "ps": 390, "gear": "Manuelle", "fuel": "Essence", "color": "Rosso Corsa", "price": 165000, "cat": "classic", "badge": "Exemple", "description": "Annonce d’exemple, à remplacer depuis le back-office.", "url": "", "photos": ["/assets/ferrari-testarossa.jpg"], "createdAt": "2026-10-16T07:57:00.000Z" }
+  ]
+}
