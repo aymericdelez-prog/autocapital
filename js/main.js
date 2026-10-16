@@ -1,7 +1,7 @@
 /* Autocapital · page d'accueil.
-   Intro, mot géant, photo qui s'ouvre au défilement, défilant des marques,
-   voitures du back-office (/api/cars), philosophie mot à mot, services avec
-   photo qui suit la souris, garage en galerie horizontale, curseur et boutons aimantés. */
+   Intro, mot géant, photo qui s’ouvre au défilement,
+   voitures du back-office (/api/cars), philosophie mot à mot, services,
+   garage en galerie horizontale, curseur et boutons aimantés. */
 (function () {
   'use strict';
   const $ = (s, r = document) => r.querySelector(s);
@@ -55,7 +55,7 @@
     if (open) menu.hidden = false; else setTimeout(() => { if (!nav.classList.contains('is-open')) menu.hidden = true; }, 800);
   });
   menu.addEventListener('click', (e) => { if (e.target.closest('a')) burger.click(); });
-  const darks = [$('#voitures'), $('#garage'), $('#foot'), $('.marq')];
+  const darks = [$('#voitures'), $('#garage'), $('#foot')];
   const links = $$('.nav__links a');
   const ids = links.map((a) => $(a.getAttribute('href')));
 
@@ -67,10 +67,7 @@
   watch($$('.rv, [data-lines]'));
   $$('.serv__row').forEach((el, i) => el.style.setProperty('--d', i));
 
-  // --------------------------------------------------------------- défilant
-  const marq = $('#marq');
-  marq.innerHTML += marq.innerHTML;
-  let mx = 0, vel = 0, lastY = scrollY;
+  let vel = 0, lastY = scrollY;
 
   // ------------------------------------------------------------ voitures
   const grid = $('#grid');
@@ -167,21 +164,6 @@
     });
   } else cur.remove();
 
-  // ------------------------------------------------- services : photo flottante
-  const float = $('#serv-float'), fimgs = $$('img', float);
-  let fx = 0, fy = 0, ftx = 0, fty = 0;
-  if (fine && !calm) {
-    $$('.serv__row').forEach((row) => {
-      row.addEventListener('pointerenter', () => {
-        fimgs.forEach((im, i) => im.classList.toggle('is-on', String(i) === row.dataset.img));
-        float.style.setProperty('--rot', `${(Number(row.dataset.img) % 2 ? 1 : -1) * 4}deg`);
-        float.classList.add('is-on');
-      });
-      row.addEventListener('pointerleave', () => float.classList.remove('is-on'));
-      row.addEventListener('pointermove', (e) => { ftx = e.clientX; fty = e.clientY; });
-    });
-  }
-
   // ---------------------------------------------------------- philosophie
   const philo = $$('#philo li');
   const philoN = $('#philo-n');
@@ -216,8 +198,6 @@
 
     // nav
     nav.classList.toggle('is-scrolled', y > 20);
-    nav.classList.toggle('is-hidden', y > vh && dy > 2 && !nav.classList.contains('is-open'));
-    if (dy < -2) nav.classList.remove('is-hidden');
     const probe = 30;
     nav.classList.toggle('is-dark', darks.some((s) => { const r = s.getBoundingClientRect(); return r.top <= probe && r.bottom > probe; }));
     let act = -1;
@@ -228,12 +208,6 @@
       // hero
       const hr = hero.getBoundingClientRect();
       heroPin.style.setProperty('--p', clamp(-hr.top / (hr.height - vh)).toFixed(4));
-
-      // défilant
-      mx -= 0.6 + Math.abs(vel) * 0.25;
-      const half = marq.scrollWidth / 2;
-      if (-mx >= half) mx += half;
-      marq.style.transform = `translate3d(${mx}px,0,0) skewX(${clamp(-vel * 0.15, -8, 8)}deg)`;
 
       // parallaxe
       par.forEach((im) => { const r = im.parentNode.getBoundingClientRect(); if (r.bottom > 0 && r.top < vh) im.style.setProperty('--py', `${((r.top + r.height / 2) / vh - 0.5) * -60}px`); });
@@ -251,9 +225,6 @@
       const fp = clamp((vh - fr.top) / (fr.height + 160));
       (foot._c || (foot._c = $$('.ch', foot))).forEach((c, i) => { c.style.transform = `translateY(${clamp(1 - (fp * 1.9 - i * 0.025)) * 105}%)`; });
 
-      // photo flottante
-      fx += (ftx - fx) * 0.14; fy += (fty - fy) * 0.14;
-      float.style.left = fx + 'px'; float.style.top = fy + 'px';
     }
 
     // philosophie : les mots s'allument au passage
