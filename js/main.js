@@ -190,7 +190,7 @@
       // pied
       const fr = foot.getBoundingClientRect();
       const fp = clamp((vh - fr.top) / (fr.height + 160));
-      (foot._c || (foot._c = $$('.ch', foot))).forEach((c, i) => { c.style.transform = `translateY(${clamp(1 - (fp * 1.9 - i * 0.025)) * 105}%)`; });
+      foot.style.setProperty('--f', clamp(fp * 1.6).toFixed(4));
 
     }
 
