@@ -1,7 +1,4 @@
-﻿.vercel
+.vercel
 .env*
 node_modules
 *.log
-
-.vercel
-.env*
