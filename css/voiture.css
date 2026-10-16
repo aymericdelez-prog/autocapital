@@ -58,6 +58,8 @@
 .vf__visit .h2 { color: #fff; }
 .vf__visit .lead { color: rgba(255, 255, 255, 0.7); margin-top: 10px; }
 .vf__visit .tlink { color: #fff; }
+.vf__visit .pill { background: #fff; color: var(--ink); }
+.vf__visit .pill:hover { color: #fff; }
 .vf__visit .vf__cta { margin-top: 0; }
 
 /* chargement et annonce retirée */
@@ -87,6 +89,13 @@
   .vf__top { grid-template-columns: 1fr; }
   .vf__panel { position: static; }
   .specs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 680px) {
+  .vf__panel, .vf__specs, .vf__desc { text-align: center; }
+  .vf__cta { justify-content: center; }
+  .vf__desc-text { margin: 0 auto; }
+  .vf__visit { flex-direction: column; align-items: center; text-align: center; }
+  .vf__back { display: flex; justify-content: center; }
 }
 @media (max-width: 600px) {
   .gal__main { border-radius: 20px; }

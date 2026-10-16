@@ -317,6 +317,8 @@ a.line:hover em { background: var(--rosso); border-color: var(--rosso); color: #
   .hero__top { justify-items: center; text-align: center; }
   .hero__word { justify-content: center; }
   .hero__aside { flex-direction: column; justify-content: center; gap: 16px; }
+  .hero__cap { flex-direction: column; align-items: center; text-align: center; gap: 18px; bottom: 28px; }
+  .hero__cap p { font-size: 30px; }
   .stock__head { flex-direction: column; align-items: stretch; gap: 22px; margin-bottom: 30px; }
   .filters { align-self: center; }
   .card__body { grid-template-columns: 1fr; grid-template-rows: auto 2.1em auto auto; gap: 3px; padding: 12px 12px 14px; }
