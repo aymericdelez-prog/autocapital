@@ -1,7 +1,7 @@
 /* Autocapital · page d'accueil.
    Intro, mot géant, photo qui s’ouvre au défilement,
    voitures du back-office (/api/cars), philosophie mot à mot, services,
-   garage en galerie horizontale, curseur et boutons aimantés. */
+   curseur et boutons aimantés. */
 (function () {
   'use strict';
   const $ = (s, r = document) => r.querySelector(s);
@@ -55,7 +55,7 @@
     if (open) menu.hidden = false; else setTimeout(() => { if (!nav.classList.contains('is-open')) menu.hidden = true; }, 800);
   });
   menu.addEventListener('click', (e) => { if (e.target.closest('a')) burger.click(); });
-  const darks = [$('#voitures'), $('#garage'), $('#foot')];
+  const darks = [$('#voitures'), $('#foot')];
   const links = $$('.nav__links a');
   const ids = links.map((a) => $(a.getAttribute('href')));
 
@@ -171,17 +171,9 @@
 
   const hero = $('#accueil'), heroPin = $('.hero__pin');
 
-  // --------------------------------------------------------------- garage
-  const gSec = $('#garage'), gTrack = $('#g-track'), gBar = $('#g-bar');
-  const gPh = $$('.garage__ph img');
-  let gDist = 0;
-  function sizeGarage() {
-    gDist = Math.max(0, gTrack.scrollWidth - innerWidth);
-    gSec.style.height = `${innerHeight + gDist}px`;
-  }
   const heroTop = $('.hero__top');
   function sizeHero() { heroPin.style.setProperty('--mt', `${heroTop.offsetTop + heroTop.offsetHeight + Math.min(60, innerHeight * 0.06)}px`); }
-  const resize = () => { sizeGarage(); sizeHero(); };
+  const resize = sizeHero;
   resize();
   addEventListener('resize', resize);
   addEventListener('load', resize);
@@ -212,13 +204,6 @@
       // parallaxe
       par.forEach((im) => { const r = im.parentNode.getBoundingClientRect(); if (r.bottom > 0 && r.top < vh) im.style.setProperty('--py', `${((r.top + r.height / 2) / vh - 0.5) * -60}px`); });
 
-      // garage
-      const gr = gSec.getBoundingClientRect();
-      const gp = clamp(-gr.top / Math.max(1, gDist));
-      gTrack.style.transform = `translate3d(${-gp * gDist}px,0,0)`;
-      gBar.parentNode.style.setProperty('--g', gp.toFixed(4));
-      gBar.style.transform = `scaleX(${gp})`;
-      if (gr.top < vh && gr.bottom > 0) gPh.forEach((im) => { const r = im.parentNode.getBoundingClientRect(); im.style.setProperty('--px', `${((r.left + r.width / 2) / innerWidth - 0.5) * -12}%`); });
 
       // pied
       const fr = foot.getBoundingClientRect();

@@ -10,8 +10,8 @@
   --muted: #86837c;
   --night: #101012;
   --night-2: #18181b;
-  --rosso: #9a7d4f;      /* champagne : l'unique accent */
-  --rosso-dk: #7d653f;
+  --rosso: #1f4b3b;      /* vert anglais : l'unique accent */
+  --rosso-dk: #163729;
   --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --f-body: "Inter", "Helvetica Neue", Arial, sans-serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -105,7 +105,7 @@ svg { width: 1em; height: 1em; }
 /* ----------------------------------------------------------------- curseur */
 .cur { position: fixed; left: 0; top: 0; z-index: 100; pointer-events: none; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: var(--rosso); mix-blend-mode: normal; transition: width 0.45s var(--ease), height 0.45s var(--ease), margin 0.45s var(--ease), background 0.3s, opacity 0.3s; display: grid; place-items: center; }
 .cur span { font-size: 13px; font-weight: 600; color: #fff; opacity: 0; transition: opacity 0.3s; letter-spacing: 0.02em; }
-.cur.is-link { width: 46px; height: 46px; margin: -23px 0 0 -23px; background: rgba(154, 125, 79, 0.2); }
+.cur.is-link { width: 46px; height: 46px; margin: -23px 0 0 -23px; background: rgba(31, 75, 59, 0.18); }
 .cur.is-view { width: 92px; height: 92px; margin: -46px 0 0 -46px; background: var(--rosso); }
 .cur.is-view span { opacity: 1; }
 .cur.is-off { opacity: 0; }
@@ -222,18 +222,6 @@ svg { width: 1em; height: 1em; }
 .clay .pill::before { background: var(--ink); }
 .clay .pill:hover { color: #fff; }
 
-/* -------------------------------------------------------- garage (pin) */
-.garage { position: relative; background: var(--night); color: #fff; }
-.garage__pin { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; display: grid; align-content: center; }
-.garage__track { display: flex; gap: clamp(16px, 2vw, 30px); padding: 0 var(--gut); width: max-content; will-change: transform; align-items: center; }
-.garage__intro { width: min(460px, 82vw); flex: none; padding-right: 30px; }
-.garage__intro .lead { color: rgba(255, 255, 255, 0.6); }
-.garage__ph { position: relative; flex: none; height: 64vh; aspect-ratio: 4 / 3; border-radius: var(--r-card); overflow: hidden; background: var(--night-2); }
-.garage__ph:nth-child(odd) { height: 54vh; aspect-ratio: 3 / 4; }
-.garage__ph img { position: absolute; top: 0; left: -15%; width: 130%; height: 100%; object-fit: cover; transform: translateX(var(--px, 0)); }
-.garage__ph figcaption { position: absolute; left: 18px; bottom: 16px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
-.garage__bar { position: absolute; left: var(--gut); right: var(--gut); bottom: 36px; height: 1px; background: rgba(255, 255, 255, 0.15); }
-.garage__bar i { position: absolute; inset: 0; background: var(--rosso); transform-origin: left; transform: scaleX(var(--g, 0)); }
 
 /* -------------------------------------------------------------- contact */
 .contact__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 100px); }
@@ -314,7 +302,6 @@ a.line:hover em { background: var(--rosso); border-color: var(--rosso); color: #
   .hero__media { clip-path: inset(calc((1 - var(--p, 0)) * 4vh) calc((1 - var(--p, 0)) * var(--gut)) 0 calc((1 - var(--p, 0)) * var(--gut)) round calc((1 - var(--p, 0)) * 22px) calc((1 - var(--p, 0)) * 22px) 0 0); }
   .hero__scroll { display: none; }
   .fields { grid-template-columns: 1fr; }
-  .garage__ph, .garage__ph:nth-child(odd) { height: 52vh; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
